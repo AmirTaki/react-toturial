@@ -1,19 +1,14 @@
-// import React from "react";
-// import ReactDOM from "react-dom/client";
-// import App from './App';
-// import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+import 'bootstrap/dist/css/bootstrap.min.css' //css : bootstrap
 
+import Product from './components/product';
 
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+    <Product />
+);
 
-
-// const root = ReactDOM.createRoot(document.getElementById('root'));
-// root.render(
-//     <App />
-// );
-
-// reportWebVitals();
-
-import {  talk } from "./person";   // not default
-import walk from "./person";   // default 
-walk()
-talk()
+reportWebVitals();

@@ -1,20 +1,6 @@
 import {Component} from 'react';
 
-
-// render => return => jsx or react element
-
-// class App extends Component {
-//     render(){
-//         return (
-//             <>
-//                 <h1>hello world !</h1> 
-//                 <h2>another</h2>
-//             </>
-//         )
-//     }
-// }
-
-function App(){
+const App = () =>{
     return(
         <>
             <h1> hello world !</h1>
@@ -22,4 +8,5 @@ function App(){
         </>
     )
 }
+
 export default App;

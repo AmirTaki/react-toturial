@@ -14,9 +14,7 @@ const Products = () => {
     <>
        {products.map((p, index) => (
             
-            <Product key = {index} count = {p.count} productName = {p.productName}>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed, exercitationem consequuntur velit impedit at corporis! Fugiat officia distinctio minus officiis reprehenderit ad, sint, laudantium excepturi aliquam, optio praesentium. Quod, praesentium?</p>
-            </Product>
+            <Product key = {index} count = {p.count} productName = {p.productName} />
        ))}
     </>    
   

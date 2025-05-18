@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Product = ({productName, count : propCount , children}) => {
+const Product = ({productName, count : propCount }) => {
     
     const [count, setCount] = useState(propCount)
 
@@ -19,7 +19,6 @@ const Product = ({productName, count : propCount , children}) => {
             
             <button onClick = {handelDelete} className='m-2 btn btn-sm btn-danger'>delete</button>    
         
-            {children}
         </div>
  
       );

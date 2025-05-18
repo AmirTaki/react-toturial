@@ -12,8 +12,7 @@ class Product extends Component {
    
         return (
             <div style={{backgroundColor : 'silver'}}>  
-                {/* <span className='m-2 text-info' > {this.props.productName} </span> */}
-
+     
                 <span className='m-2 text-info' > {productName} </span>
             
                 <span className='m-2 badge bg-primary'>{this.format()}</span>
@@ -26,8 +25,6 @@ class Product extends Component {
               
                 <button onClick = {this.handelDelete} className='m-2 btn btn-sm btn-danger'>delete</button>    
             
-                {this.props.children}
-
            </div>
         )
     }
@@ -44,7 +41,7 @@ class Product extends Component {
         this.setState({count : count - 1})
     }
     handelDelete = () =>{
-        console.log('Delete')
+        this.props.onDelete(this.props.id)
     }
 
     format (){

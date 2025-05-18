@@ -14,16 +14,18 @@ class Products extends Component {
         <>
             {this.state.prodects.map((p, index) => (
               
-              // <Product key = {index} productName = {p.productName} count = {p.count} />
-                
-                <Product key = {index} productName = {p.productName} count = {p.count} > 
-                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum eveniet pariatur animi, nulla iure placeat consequatur dolores minima maiores nobis quasi recusandae ea voluptates quas voluptas fuga omnis quae quam.</p>
-                </Product>
-          
+              <Product onDelete = {this.handleDelte} id = {p.id} key = {index} productName = {p.productName} count = {p.count} />
+                 
             ))}
         </>       
         )
     }
+
+    // method delete
+   handleDelte = (prouductId) => {
+       const newProduct =   this.state.prodects.filter(p => p.id !== prouductId)
+       this.setState({prodects : newProduct})
+   } 
 }
 
 export default Products;

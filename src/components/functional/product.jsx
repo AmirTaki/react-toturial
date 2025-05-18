@@ -1,12 +1,12 @@
 import { useState } from "react";
 
-const Product = ({productName}) => {
-    // useState() discractor=> const [nameState, FunctionState ] = useStaet(value)
-    const [count, setCount] = useState(0)
+const Product = ({productName, count : propCount , children}) => {
+    
+    const [count, setCount] = useState(propCount)
 
     
     return (
-        <div>  
+        <div style={{backgroundColor : 'orange'}}>  
             <span className='m-2 text-info' >{productName}</span>
         
             <span className='m-2 badge bg-primary'>{format()}</span>
@@ -19,6 +19,7 @@ const Product = ({productName}) => {
             
             <button onClick = {handelDelete} className='m-2 btn btn-sm btn-danger'>delete</button>    
         
+            {children}
         </div>
  
       );

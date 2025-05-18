@@ -4,14 +4,14 @@ import styled from './product.moudle.css';
 class Product extends Component {
 
     state = {
-        count : 0
+        count : this.props.count
     }
     render() {
    
         const {productName} = this.props
    
         return (
-            <div>  
+            <div style={{backgroundColor : 'silver'}}>  
                 {/* <span className='m-2 text-info' > {this.props.productName} </span> */}
 
                 <span className='m-2 text-info' > {productName} </span>
@@ -26,6 +26,8 @@ class Product extends Component {
               
                 <button onClick = {this.handelDelete} className='m-2 btn btn-sm btn-danger'>delete</button>    
             
+                {this.props.children}
+
            </div>
         )
     }

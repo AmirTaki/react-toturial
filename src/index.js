@@ -4,10 +4,9 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css' //css : bootstrap
 
-// import Product from './components/product';
-// import Product  from "./components/functional/product";
-// import Products from "./components/products";
-import Products from "./components/functional/products"
+
+import Products from "./components/products";
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

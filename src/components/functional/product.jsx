@@ -1,8 +1,8 @@
 import { useState } from "react";
 
-const Product = ({productName, count : propCount, id, onDelete  }) => {
+const Product = ({productName, count , id, onDelete, onIncrement , onDecrement  }) => {
     
-    const [count, setCount] = useState(propCount)
+    // const [count, setCount] = useState(propCount)
     
     return (
         <div style={{backgroundColor : 'orange'}}>  
@@ -12,7 +12,7 @@ const Product = ({productName, count : propCount, id, onDelete  }) => {
         
             <span className='m-2 badge bg-primary'></span>
             
-            <button onClick = {()=>handelIncrement(count, setCount)} className='m-2 btn btn-sm btn-success'>+</button>
+            <button   onClick = {()=>handelIncrement(id , onIncrement)} className='m-2 btn btn-sm btn-success'>+</button>
             
             <button onClick = {handelDecrement} className='m-2 btn btn-sm btn-warning '>-</button>
             
@@ -26,7 +26,8 @@ const Product = ({productName, count : propCount, id, onDelete  }) => {
 
     // decrement
     function handelDecrement () {
-      setCount(count - 1)
+    //   setCount(count - 1)
+        onDecrement(id)
     }
 
     // delete
@@ -44,22 +45,10 @@ const Product = ({productName, count : propCount, id, onDelete  }) => {
 // function -> out component
 
 // increment
-function handelIncrement (count, setCount){
-    setCount(count + 1);
+function handelIncrement (id, onIncrement){
+    onIncrement(id);
 }
 export default Product;
 
 
 
-
-/* 
-Array discratoers
-const result = ['one', 'two']
-
-const list [first, second] = result
-
-console.log(first)
-
-console.log(second)
-
-*/

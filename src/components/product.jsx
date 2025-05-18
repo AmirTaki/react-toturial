@@ -2,10 +2,6 @@ import { Component } from "react";
 import styled from './product.moudle.css';
 
 class Product extends Component {
-
-    // state = {
-    //     count : this.props.count
-    // }
     render() {
    
         const {productName} = this.props
@@ -31,17 +27,11 @@ class Product extends Component {
     handelIncrement = ()=>{
       
         this.props.onIncrement(this.props.id)
-
-        // const {count : c} = this.state;
-        // this.setState({count : c + 1})
     }
 
     handelDecrement = () =>{
         
         this.props.onDecrement(this.props.id)
-        
-        // const {count} = this.state;
-        // this.setState({count : count - 1})
     }
     handelDelete = () =>{
         this.props.onDelete(this.props.id)

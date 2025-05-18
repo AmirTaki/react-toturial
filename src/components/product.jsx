@@ -2,12 +2,9 @@ import { Component } from "react";
 import styled from './product.moudle.css';
 
 class Product extends Component {
-     // constructor attribute
 
-    // state atribute  => state = {object}
     state = {
-        count : 0,
-        // productName : 'labtop'
+        count : 0
     }
     render() {
    
@@ -30,23 +27,7 @@ class Product extends Component {
         )
     }
     handelIncrement = ()=>{
-        // this.state.count += 1; 
-       
-        
-        /* 
-        method setState : 
-            1)
-            this.setState({count : this.state.count + 1})
-            
-            2) 
-            const counter  = this.state.count
-            this.setState({count : counter + 1})
-            
-            3)
-            const {count} = this.state;
-            this.setState({count + 1})
-        */
-    
+      
         const {count : c} = this.state;
         this.setState({count : c + 1})
      

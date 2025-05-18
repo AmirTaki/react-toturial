@@ -2,24 +2,18 @@ import Product from "./product"
 import { useState } from "react";
 
 
-const Products = () => {
-    const [products, setProducts]  = useState(
-        [
-            {id : 1, count : 2, productName : "labtop"},
-            {id : 2, count : 5, productName : "phone"},
-            {id : 3, count : 8, productName : "airpods"},
-        ]
-    )
+const Products = ({products, onIncrement, onDecrement, onDelete, onReset }) => {
+   
     return (
     <>
         {/* buttons */}
-        <button onClick={handleReset} className = 'btn btn-primary' >Reset</button>
+        <button onClick={onReset} className = 'btn btn-primary' >Reset</button>
 
        {products.map((p, index) => (          
             <Product 
-                onIncrement = {handelIncrement}
-                onDecrement = {handelDecrement}
-                onDelete = {handleDelete}
+                onIncrement = {onIncrement}
+                onDecrement = {onDecrement}
+                onDelete = {onDelete}
                 id = {p.id} 
                 key = {index}
                 count = {p.count}
@@ -28,36 +22,6 @@ const Products = () => {
        ))}
     </>    
     )   
-    function handleDelete (productId) {
-
-        const newProducts = products.filter(p => p.id !== productId)
-        setProducts(newProducts)
-    }
-
-    // function Reset 
-    function handleReset () {
-        const newProducts = products.map(p => {
-            p.count = 0;
-            return p 
-        })
-        setProducts(newProducts)
-    }
-
-    // function increcrement
-    function handelIncrement(productId) {
-        const newProducts = [...products]
-        const index = newProducts.findIndex(p => p.id === productId)
-        newProducts[index].count +=1;
-        setProducts(newProducts)
-    }
-
-    // function Decrement
-    function handelDecrement (productId) {
-        const newProducts = [...products]
-        const index = newProducts.findIndex(p => p.id === productId)
-        newProducts[index].count -=1;
-        setProducts(newProducts)
-    }
 }
 
 

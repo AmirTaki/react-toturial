@@ -1,12 +1,13 @@
 import { useState } from "react";
 
-const Product = () => {
+const Product = (props) => {
     // useState() discractor=> const [nameState, FunctionState ] = useStaet(value)
     const [count, setCount] = useState(0)
+
     
     return (
         <div>  
-            <span className='m-2 text-info' >labtop</span>
+            <span className='m-2 text-info' >{props.productName}</span>
         
             <span className='m-2 badge bg-primary'>{format()}</span>
         

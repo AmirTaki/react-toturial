@@ -9,6 +9,7 @@ class Product extends Component {
     render() {
    
         const {productName} = this.props
+   
         return (
             <div>  
                 {/* <span className='m-2 text-info' > {this.props.productName} </span> */}

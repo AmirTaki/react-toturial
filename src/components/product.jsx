@@ -3,9 +3,9 @@ import styled from './product.moudle.css';
 
 class Product extends Component {
 
-    state = {
-        count : this.props.count
-    }
+    // state = {
+    //     count : this.props.count
+    // }
     render() {
    
         const {productName} = this.props
@@ -30,22 +30,25 @@ class Product extends Component {
     }
     handelIncrement = ()=>{
       
-        const {count : c} = this.state;
-        this.setState({count : c + 1})
-     
-        console.log(this.state)
+        this.props.onIncrement(this.props.id)
+
+        // const {count : c} = this.state;
+        // this.setState({count : c + 1})
     }
 
     handelDecrement = () =>{
-        const {count} = this.state;
-        this.setState({count : count - 1})
+        
+        this.props.onDecrement(this.props.id)
+        
+        // const {count} = this.state;
+        // this.setState({count : count - 1})
     }
     handelDelete = () =>{
         this.props.onDelete(this.props.id)
     }
 
     format (){
-        return this.state.count === 0 ? 'zero' : this.state.count;
+        return this.props.count === 0 ? 'zero' : this.props.count;
     }
 }
 

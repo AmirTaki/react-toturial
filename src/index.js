@@ -5,8 +5,8 @@ import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css' //css : bootstrap
 
 
-// import Products from "./components/products";
-import Products from "./components/functional/products";
+import Products from "./components/products";
+// import Products from "./components/functional/products";
 
 
 

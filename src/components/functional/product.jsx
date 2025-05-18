@@ -5,7 +5,7 @@ const Product = () => {
     const [count, setCount] = useState(0)
     
     return (
-        <>  
+        <div>  
             <span className='m-2 text-info' >labtop</span>
         
             <span className='m-2 badge bg-primary'>{format()}</span>
@@ -18,7 +18,7 @@ const Product = () => {
             
             <button onClick = {handelDelete} className='m-2 btn btn-sm btn-danger'>delete</button>    
         
-        </>
+        </div>
  
       );
 

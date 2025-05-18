@@ -8,10 +8,12 @@ class Product extends Component {
     }
     render() {
    
-
+        const {productName} = this.props
         return (
-            <>  
-                <span className='m-2 text-info' >labtop</span>
+            <div>  
+                {/* <span className='m-2 text-info' > {this.props.productName} </span> */}
+
+                <span className='m-2 text-info' > {productName} </span>
             
                 <span className='m-2 badge bg-primary'>{this.format()}</span>
             
@@ -23,7 +25,7 @@ class Product extends Component {
               
                 <button onClick = {this.handelDelete} className='m-2 btn btn-sm btn-danger'>delete</button>    
             
-           </>
+           </div>
         )
     }
     handelIncrement = ()=>{

@@ -1,9 +1,8 @@
 import { useState } from "react";
 
-const Product = ({productName, count : propCount }) => {
+const Product = ({productName, count : propCount, id, onDelete  }) => {
     
     const [count, setCount] = useState(propCount)
-
     
     return (
         <div style={{backgroundColor : 'orange'}}>  
@@ -32,7 +31,7 @@ const Product = ({productName, count : propCount }) => {
 
     // delete
     function handelDelete (){
-        console.log('Delete')
+        onDelete(id);
     }
 
     // format

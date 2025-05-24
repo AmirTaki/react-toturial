@@ -1,13 +1,17 @@
 import { Component } from "react";
-import styled from './product.moudle.css';
+
+import ProductContext from "./../context/products";
 
 class Product extends Component {
+    static contextType = ProductContext;
+    
     render() {
    
         const {productName} = this.props
    
         return (
-            <div style={{backgroundColor : 'silver'}}>  
+          
+            <div >  
      
                 <span className='m-2 text-info' > {productName} </span>
             
@@ -26,15 +30,15 @@ class Product extends Component {
     }
     handelIncrement = ()=>{
       
-        this.props.onIncrement(this.props.id)
+        this.context.onIncrement(this.props.id)
     }
 
     handelDecrement = () =>{
         
-        this.props.onDecrement(this.props.id)
+        this.context.onDecrement(this.props.id)
     }
     handelDelete = () =>{
-        this.props.onDelete(this.props.id)
+        this.context.onDelete(this.props.id)
     }
 
     format (){

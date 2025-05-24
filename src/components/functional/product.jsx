@@ -1,7 +1,9 @@
 import { useState } from "react";
+import { useContext } from "react";
+import ProductContext from "../../context/products";
 
-const Product = ({productName, count , id, onDelete, onIncrement , onDecrement  }) => {
-    
+const Product = ({productName, count , id}) => {
+   const productContext = useContext(ProductContext)    
     // const [count, setCount] = useState(propCount)
     
     return (
@@ -12,7 +14,7 @@ const Product = ({productName, count , id, onDelete, onIncrement , onDecrement  
         
             <span className='m-2 badge bg-primary'></span>
             
-            <button   onClick = {()=>handelIncrement(id , onIncrement)} className='m-2 btn btn-sm btn-success'>+</button>
+            <button   onClick = {handelIncrement} className='m-2 btn btn-sm btn-success'>+</button>
             
             <button onClick = {handelDecrement} className='m-2 btn btn-sm btn-warning '>-</button>
             
@@ -23,16 +25,18 @@ const Product = ({productName, count , id, onDelete, onIncrement , onDecrement  
       );
 
 
-
+    function handelIncrement (){
+        productContext.onIncrement(id);
+    }
     // decrement
     function handelDecrement () {
     //   setCount(count - 1)
-        onDecrement(id)
+        productContext.onDecrement(id)
     }
 
     // delete
     function handelDelete (){
-        onDelete(id);
+        productContext.onDelete(id);
     }
 
     // format
@@ -45,9 +49,7 @@ const Product = ({productName, count , id, onDelete, onIncrement , onDecrement  
 // function -> out component
 
 // increment
-function handelIncrement (id, onIncrement){
-    onIncrement(id);
-}
+
 export default Product;
 
 

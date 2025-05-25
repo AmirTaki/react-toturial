@@ -5,6 +5,17 @@ import ProductContext from './context/products';
 
 
 class App extends Component {
+    // counstructor
+    constructor(props){
+        super(props)
+        console.log('constructor -> App', this.props);
+        // this.state = {products : this.props.products}
+    }
+    // component did mount
+    componentDidMount(){
+        console.log('component did mount -> App')
+    }
+
     //  state 
     state = {
         products : [
@@ -13,8 +24,9 @@ class App extends Component {
             {id : 3, count : 8, productName : "airpods"},
         ]
     }
-
+    // render
     render() {
+        console.log('render -> App')
         return (
             
             <ProductContext.Provider

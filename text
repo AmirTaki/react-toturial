@@ -1,0 +1,14 @@
+1)MOUNT : create component
+(constructor)
+(render)
+(componentDidMount)
+
+
+2) UPDATE : edit state
+(render)
+(componentDidUpdate)
+
+3) UNMOUNT: delete component
+(componentWillUnmount)
+
+

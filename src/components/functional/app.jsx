@@ -2,6 +2,7 @@ import Navbar from "./navbar";
 import Products from "./products";
 import { useState } from "react";
 import productContext from "../../context/products";
+import { useEffect } from "react";
 
 const App = () => {
 
@@ -12,6 +13,16 @@ const App = () => {
             {id : 3, count : 8, productName : "airpods"},
         ]
     )
+
+    useEffect(()=> {
+        console.log('App -> mount')  // mount 
+    },[])  // => mount
+
+    useEffect(()=> {
+        console.log('App -> update & mount')  // mount &  update 
+    },)  // => mount & update
+
+
     return (
         <>
             <productContext.Provider

@@ -1,13 +1,20 @@
 import { useState } from "react";
 import { useContext } from "react";
 import ProductContext from "../../context/products";
+import { useEffect } from "react";
 
 const Product = ({productName, count , id}) => {
    const productContext = useContext(ProductContext)    
-    // const [count, setCount] = useState(propCount)
+  
+    useEffect(()=> {
+        return () => {
+            console.log("product -> unmount")  // unmount
+        }
+    },[])
+
     
     return (
-        <div style={{backgroundColor : 'orange'}}>  
+        <div>  
             <span className='m-2 text-info' >{productName}</span>
         
             <span className='m-2 badge bg-primary'>{format()}</span>

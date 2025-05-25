@@ -3,14 +3,10 @@ import ProductContext from "./../context/products";
 
 class Navbar extends Component {
     static contextType = ProductContext
-      componentDidUpdate(){
-        console.log("did update -> navbar")
-    }
 
-    
     // render
     render () {
-        console.log("render -> navber")
+  
         return (
             <nav className = 'navbar navbar-light bg-light'>
                 <div className="container-fluid">

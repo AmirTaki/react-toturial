@@ -5,9 +5,7 @@ import ProductContext from './context/products';
 
 
 class App extends Component {
-    componentDidUpdate(){
-        console.log("did update -> app")
-    }
+  
     //  state 
     state = {
         products : [
@@ -18,7 +16,7 @@ class App extends Component {
     }
    
     render() {
-        console.log("render -> App")
+
         return (
             <ProductContext.Provider
                 value={{

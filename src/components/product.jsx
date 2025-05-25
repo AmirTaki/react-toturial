@@ -4,9 +4,15 @@ import ProductContext from "./../context/products";
 
 class Product extends Component {
     static contextType = ProductContext;
-    
+    componentDidUpdate(){
+            console.log("did update - products")
+        }
+    componentWillUnmount(){
+        console.log("unmount - product")
+    }
+
     render() {
-   
+        console.log("render -> product")
         const {productName} = this.props
    
         return (

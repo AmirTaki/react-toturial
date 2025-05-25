@@ -4,18 +4,9 @@ import ProductContext from './../context/products';
 
 class Products extends Component {
     static contextType = ProductContext;
-    // constructor
-    constructor(){
-        super()
-        console.log('constructor -> products',);
+    componentDidUpdate(){
+        console.log("did update -> products")
     }
-
-    // component did mount
-    componentDidMount()
-    {
-        console.log('component did mount -> products')
-    }
-    // render
     render() {
         console.log("render -> products")
         return(      

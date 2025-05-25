@@ -6,11 +6,6 @@ import { useEffect } from "react";
 const Product = ({productName, count , id}) => {
    const productContext = useContext(ProductContext)    
   
-    useEffect(()=> {
-        return () => {
-            console.log("product -> unmount")  // unmount
-        }
-    },[])
 
     
     return (
